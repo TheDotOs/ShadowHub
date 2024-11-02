@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>?????</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>  
+    <canvas id="matrix"></canvas>
+    <header>
+        <div id="tittle">
+            <h1>꧁ঔৣ☬✞ 𝕾𝖍𝖆𝖉𝖔𝖜𝕳𝖚𝖇 ✞☬ঔৣ꧂</h1>
+        </div>
+        <ul>
+            <a href="./index.html" target="_blank"><li>Início</li></a>
+            <a href="./Regras.html"target="_blank"><li>Regras</li></a>
+            <a href="./membros.html"target="_blank"><li>Membros</li></a>
+            <a href="./projetos.html"><li>?????</li></a>
+            <a href="./perfil.html"target="_blank" id="perfil-btn"><li>Perfil</li></a>
+
+    </header>
+    <main class="caio">
+        <h1><img src="caio.jpeg" alt=""></h1>
+    </main>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const numbers = '123456789';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = Array.from({ length: columns }).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = numbers.charAt(Math.floor(Math.random() * numbers.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>
