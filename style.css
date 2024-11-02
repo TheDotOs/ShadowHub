@@ -1,0 +1,174 @@
+body {
+    background-color: black;
+    color:rgb(0, 255, 55);
+    padding: 10px;
+
+}   
+header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+
+
+}
+
+
+a{
+    color: rgb(0, 255, 55);
+    font-size: 20px;
+}
+a:hover{
+    color: rgb(1, 131, 29);
+    font-size: 20px;
+    transition: 0.s all;
+
+}
+
+#perfil-btn{
+    border: 2px solid rgb(0, 255, 55);
+    padding: 10px;
+    border-radius: 15px;
+
+
+}
+#perfil-btn:hover{
+    background-color: rgb(0, 255, 55);
+    color:white;
+    transition: 0.5s all;
+}
+
+#title{
+    flex-direction: column;
+    line-height: 10px;
+
+}
+
+#id{
+
+    justify-content: center;
+
+}
+
+#projeto{
+
+    margin: 40px;
+
+}
+
+th{
+    font-family: poppinsmedium;
+
+
+}
+
+
+li{
+    display: inline-block;
+    margin: 20px;
+
+
+}
+
+main{
+    font-family: 'Arial', sans-serif;
+}
+
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+
+}
+#inicio{
+    margin-left: 75px;
+}
+
+#dark{
+    background-color: black;
+    
+}
+
+#regras{
+    margin-left: 75px;
+    margin-right: 25px;
+}
+
+
+#regras_escritas{
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 20px;
+    border: 2px solid rgb(0, 255, 55);
+    background-color: black;
+    box-shadow: inset 0 0 10px rgb(0, 0, 0);
+    font-family: poppinsmedium;
+    padding: 10px;
+
+}
+.tabela-membros {
+    width: 80%; 
+    height: 100; 
+    margin: 0 auto; 
+    border-collapse: collapse;
+    text-align: center;
+}
+#offline{
+    color: red;
+}
+.caio{
+    img{
+        width: 400px;
+        height: 400px;
+        margin-left: 500px;
+        margin-right: 500px;
+
+    }
+}
+#table-perfil{
+    margin-left: 75px;
+    margin-right: 25px;
+
+
+}
+#perfil{
+    margin-left: 75px;
+}
+#body-login{
+    background-color: white;
+    color: black;
+}
+
+#shadowhub{
+    margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid ;
+
+}
+#login{
+    margin-top:100px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+#form{
+    margin-top:0px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:0px
+}
