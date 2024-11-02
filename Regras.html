@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Regras</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>  
+    <canvas id="matrix"></canvas>
+    <header>
+        <div id="tittle">
+            <h1>꧁ঔৣ☬✞ 𝕾𝖍𝖆𝖉𝖔𝖜𝕳𝖚𝖇 ✞☬ঔৣ꧂</h1>
+        </div>
+        <ul>
+            <a href="./index.html"target="_blank"><li>Início</li></a>
+            <a href="./Regras.html"><li>Regras</li></a>
+            <a href="./membros.html"target="_blank"><li>Membros</li></a>
+            <a href="./projetos.html"target="_blank"><li>?????</li></a>
+            <a href="./perfil.html"target="_blank" id="perfil-btn"><li>Perfil</li></a>
+
+
+    </header>
+    <main>
+      <h2 id="regras">Regras</h2>
+      <h2 id="regras_escritas">A ShadowHub é uma organização que busca excelência em suas operações, discrição em suas ações e lealdade absoluta de seus membros. Para manter a ordem e a eficácia dentro do grupo, é essencial que todos sigam as seguintes diretrizes:
+
+        Discrição Absoluta
+        
+        Nenhum membro deve falar sobre a ShadowHub fora dos canais seguros. Qualquer descuido que possa comprometer a existência ou os membros da organização será considerado traição.
+        Anonimato
+        
+        Mantenha sua identidade fora das interações. Nunca revele informações pessoais, mesmo para outros membros. O anonimato é a primeira defesa da ShadowHub e deve ser preservado acima de tudo.
+        Lealdade e Compromisso
+        
+        Qualquer atividade da organização deve ser prioridade. O comprometimento com as operações e o cumprimento das missões designadas são essenciais para que cada membro permaneça dentro do grupo.
+        Autonomia e Cuidado
+        
+        Agir de maneira independente é esperado, mas sempre com responsabilidade. Evite ações que possam comprometer outros membros ou operações.
+        Compartilhamento Controlado de Conhecimento
+        
+        O conhecimento deve ser compartilhado internamente, mas sem vulnerabilizar a ShadowHub. Informações privilegiadas e técnicas avançadas devem ser distribuídas apenas entre aqueles que têm permissão.
+        Sigilo das Operações
+        
+        O sigilo é a espinha dorsal das nossas ações. Nenhuma operação, seja ela completa ou em andamento, deve ser discutida fora dos canais internos, e qualquer vazamento será tratado de forma severa.
+        Cumplicidade e Suporte
+        
+        Cada membro da ShadowHub deve proteger e apoiar os outros. Em caso de dúvida, agir com lealdade ao grupo é sempre a melhor opção.
+        Lembre-se: na ShadowHub, estamos acima das leis convencionais, mas seguimos as nossas.</h2>
+    </main>
+    <script>
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const numbers = '123456789';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = Array.from({ length: columns }).fill(1);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = `${fontSize}px monospace`;
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = numbers.charAt(Math.floor(Math.random() * numbers.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
+</html>
